@@ -8,7 +8,7 @@
 
 
 ## Architecture
-- This assignment demonstrates how to utilize Lambda Layers to modularize our code and make some functionality reusable across different Lambda Functions. The demo code using the matrix_utils.py file as the Lambda Layer. 
+- This assignment demonstrates how to utilize Lambda Layers to modularize our code and make some functionality reusable across different Lambda Functions. The demo code uses the matrix_utils.py file as the Lambda Layer. 
 This Layer has the function transpose_matrix which accepts a 2D array of integer and transposes it.
 
 ## Creation and Deployment Steps
