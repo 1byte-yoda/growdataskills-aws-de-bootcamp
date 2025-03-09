@@ -1,14 +1,14 @@
 ## Screenshots
 ### Lambda Permissions
-![permissions](https://github.com/1byte-yoda/growdataskills-aws-de-bootcamp/blob/master/assignments/module_1/screenshots/lambda_permissions.png)
+![permissions](https://github.com/1byte-yoda/growdataskills-aws-de-bootcamp/blob/master/assignments/module_1/assignment_1/screenshots/lambda_permissions.png)
 ### Lambda Role Attached
-![role](https://github.com/1byte-yoda/growdataskills-aws-de-bootcamp/blob/master/assignments/module_1/screenshots/lambda_role_attached.png)
+![role](https://github.com/1byte-yoda/growdataskills-aws-de-bootcamp/blob/master/assignments/module_1/assignment_1/screenshots/lambda_role_attached.png)
 ### Lambda Trigger Configuration
-![role](https://github.com/1byte-yoda/growdataskills-aws-de-bootcamp/blob/master/assignments/module_1/screenshots/lambda_s3_trigger.png)
+![role](https://github.com/1byte-yoda/growdataskills-aws-de-bootcamp/blob/master/assignments/module_1/assignment_1/screenshots/lambda_s3_trigger.png)
 ### CloudWatch Logs for file larger than 100mb
-![role](https://github.com/1byte-yoda/growdataskills-aws-de-bootcamp/blob/master/assignments/module_1/screenshots/gt_100mb.png)
+![role](https://github.com/1byte-yoda/growdataskills-aws-de-bootcamp/blob/master/assignments/module_1/assignment_1/screenshots/gt_100mb.png)
 ### CloudWatch Logs for file smaller than 100mb
-![role](https://github.com/1byte-yoda/growdataskills-aws-de-bootcamp/blob/master/assignments/module_1/screenshots/less_100mb.png)
+![role](https://github.com/1byte-yoda/growdataskills-aws-de-bootcamp/blob/master/assignments/module_1/assignment_1/screenshots/less_100mb.png)
 
 ## Architecture
 - This assignment involves the usage of AWS S3 to trigger a lambda function. The main goal is to parse the file size from the S3 object creation event and pass it as
