@@ -21,3 +21,6 @@ an argument to the lambda function, and log a message to AWS CloudWatch if the o
 4. To access the file name and file size, it will navigate the JSON object like so: `events["Records"]["s3"]["object"]["key"] / events["Records"]["s3"]["object"]["size"]`
 5. Then it will compare the S3 Object's file size to 10**8, if larger, then log a message.
 6. Logs can be found in AWS CloudWatch
+
+## Challenges Faced
+- The default logging module for python does not work with the default configurations. By reading the [lambda documentation](https://docs.aws.amazon.com/lambda/latest/dg/python-logging.html#python-logging-lib), the logger level must be set to INFO for it to work. 
