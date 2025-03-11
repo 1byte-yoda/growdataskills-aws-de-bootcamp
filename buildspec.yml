@@ -1,0 +1,31 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Installing dependencies...
+      - pip install --target packages -r ./lectures/module_1_class_3/practice/requirements.txt
+    finally:
+      - echo This always runs even if the update or install command fails
+  pre_build:
+    commands:
+      - echo Zipping deployment package...
+      - cd packages
+      - zip -r9 ../packages.zip
+      - cd ..
+      - zip -g packages.zip ./lectures/module_1_class_3/practice/my_lambda_handler.py
+      - ls
+    finally:
+      - echo This always runs even if the login command fails
+  build:
+    commands:
+      - echo Entered the build phase...
+      - echo Build started on `date`
+      - ls
+      - aws lambda update-function-code --function-name lambda-with-dependency  --zip-file fileb://packages.zip
+    finally:
+      - echo This always runs even if the install command fails
+  post_build:
+    commands:
+      - echo Entered the post_build phase...
+      - echo Build completed on `date`
