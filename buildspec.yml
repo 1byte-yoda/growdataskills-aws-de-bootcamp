@@ -14,8 +14,9 @@ phases:
       - echo Zipping deployment package...
       - cd packages
       - zip -r9 ../packages.zip .
-      - cd ..
-      - zip -g packages.zip ./lectures/module_1_class_3/practice/my_lambda_handler.py
+      - cd ../lectures/module_1_class_3/practice
+      - zip -g ../../../packages.zip my_lambda_handler.py
+      - cd ../../../
       - ls
     finally:
       - echo This always runs even if the login command fails
@@ -25,7 +26,8 @@ phases:
       - echo Build started on `date`
       - ls
       - aws s3 cp packages.zip s3://lambda-cicd-deployments/
-      - aws lambda update-function-code --function-name lambda-with-dependency  --zip-file fileb://packages.zip
+      - aws lambda update-function-code --function-name lambda-with-dependency --s3-bucket lambda-cicd-deployments --s3-key package.zip
+
     finally:
       - echo This always runs even if the install command fails
   post_build:
