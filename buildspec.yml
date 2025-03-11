@@ -26,7 +26,7 @@ phases:
       - echo Build started on `date`
       - ls
       - aws s3 cp packages.zip s3://lambda-cicd-deployments/
-      - aws lambda update-function-code --function-name lambda-with-dependency --s3-bucket lambda-cicd-deployments --s3-key package.zip
+      - aws lambda update-function-code --function-name lambda-with-dependency --s3-bucket lambda-cicd-deployments --s3-key packages.zip
 
     finally:
       - echo This always runs even if the install command fails
