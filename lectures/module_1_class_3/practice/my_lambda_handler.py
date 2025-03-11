@@ -6,5 +6,5 @@ def main(event, context):
     print(response.text)
     return {
         "status_code": 200,
-        "event": event
+        "event_json": event
     }
