@@ -1,0 +1,32 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.11
+    commands:
+      - echo Installing dependencies...
+    finally:
+      - echo This always runs even if the update or install command fails
+  pre_build:
+    commands:
+      - echo Zipping deployment package...
+      - cd packages
+      - zip -r9 assignment3-packages.zip lambda_function.py
+      - ls
+    finally:
+      - echo This always runs even if the login command fails
+  build:
+    commands:
+      - echo Entered the build phase...
+      - echo Build started on `date`
+      - ls
+      - aws s3 cp assignment3-packages.zip s3://lambda-cicd-deployments/
+      - aws lambda update-function-code --function-name lambda-doordash-processor-assignment3 --s3-bucket lambda-cicd-deployments --s3-key assignment3-packages.zip
+
+    finally:
+      - echo This always runs even if the install command fails
+  post_build:
+    commands:
+      - echo Entered the post_build phase...
+      - echo Build completed on `date`
