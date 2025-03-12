@@ -11,6 +11,7 @@ phases:
   pre_build:
     commands:
       - echo Zipping deployment package...
+      - ls
       - zip -r9 assignment3-packages.zip lambda_function.py
       - ls
     finally:
