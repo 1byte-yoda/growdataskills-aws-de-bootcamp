@@ -11,8 +11,10 @@ phases:
   pre_build:
     commands:
       - echo Zipping deployment package...
+      - cd assignments/module_1/assignment_3/
       - ls
-      - zip -r9 assignment3-packages.zip lambda_function.py
+      - zip -r9 ../../../assignment3-packages.zip lambda_function.py
+      - cd ../../../
       - ls
     finally:
       - echo This always runs even if the login command fails
